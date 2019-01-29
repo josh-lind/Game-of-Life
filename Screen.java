@@ -1,4 +1,5 @@
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.Graphics;
 
 import javax.swing.JPanel;
@@ -16,6 +17,8 @@ public class Screen extends JPanel {
 	private static final long serialVersionUID = 1L;
 
 	private int[][] m;
+	private int state;
+	private int endState;
 
 	public Screen() {
 		repaint();
@@ -35,10 +38,19 @@ public class Screen extends JPanel {
 
 			}
 		}
+		Font myFont = new Font("TimesRoman", Font.BOLD, 40);
+		g.setFont(myFont);
+		g.setColor(Color.orange);
+		g.drawString(state + "", 10, 760);
+		if (endState != -1) {
+			g.drawString("End State: " + endState, 10, 720);
+		}
 	}
 
-	public void setMat(int[][] mat) {
+	public void setMatAndPaint(int[][] mat, int s, int endS) {
 		m = mat;
+		state = s;
+		endState = endS;
 		repaint();
 	}
 

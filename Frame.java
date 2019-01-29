@@ -22,7 +22,6 @@ public class Frame extends JFrame {
 		setTitle("Game Of Life");
 
 		init();
-
 	}
 
 	public void init() {
@@ -34,9 +33,8 @@ public class Frame extends JFrame {
 		setVisible(true);
 	}
 
-	public void setMat(int[][] mat) {
-		s.setMat(mat);
-
+	public void setMatAndPaint(int[][] mat, int state, int endState) {
+		s.setMatAndPaint(mat, state, endState);
 	}
 
 }
